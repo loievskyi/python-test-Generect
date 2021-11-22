@@ -12,9 +12,9 @@
 python test_data_parser.py
 ```
 
-В результаті виконається парсинг тестових данних (з методу _get_test_json)
+В результаті виконається парсинг тестових даних (з методу _get_test_json)
 
-![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/test_data_parser_result.png)
+![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/test-data-parser-result.png)
 
 ## Частина друга.
 
@@ -61,13 +61,25 @@ python manage.py runserver
 ```
 
 Далі за допомогою веб-браузеру перейти за адресою http://localhost:8000/admin,
-да за допомогою інтерфейсу адміністратора заповнити базу тестовими данними.
+да за допомогою інтерфейсу адміністратора заповнити базу тестовими даними.
 
 ![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/admin_1.png)
 
 ![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/admin_2.png)
 
-## Перегляд данних
+### Команда для генерації тестових даних
+
+Також для генерації тестових даних можна використати management-команду:
+
+```bash
+python manage.py generate_test_data
+```
+
+![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/generate-test-data.png)
+
+При виконанні цієї команди має створитися 10 об'єктів Company та 100 об'єктів Person
+
+## Перегляд даних
 
 ### Список компаній
 
@@ -93,7 +105,7 @@ python manage.py runserver
 
 ![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/person-detail.png)
 
-### Парсинг данних з API
+### Парсинг даних з API
 
 Перейти в папку проекту (з консолі чи терміналу), далі
 
@@ -102,6 +114,6 @@ python api_data_parser.py
 ```
 
 Команду необхідно виконувати при запущеному сервері, що "віддає" API
-В результаті виконається парсинг тестових данних (з методу _get_test_json)
+В результаті виконається парсинг тестових даних (з API)
 
-![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/api_data_parser_result.png)
+![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/api-data-parser-result.png)
