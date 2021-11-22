@@ -75,11 +75,15 @@ class TestDataParser(object):
         company = self._get_test_json("company_url", company_json)
         return company
 
-    def _get_list_of_persons_url(self, company_id):
+    def _get_list_of_persons_url(self, company):
         """
         Method which create list_of_persons_url from company_id.
         """
-        return f"https://www.linkedin.com/search/results/people/?currentCompany={company_id}"
+        persons_url = company.get("persons_url", None)
+        if persons_url:
+            return persons_url
+        else:
+            return f"https://www.linkedin.com/search/results/people/?currentCompany={company['id']}"
 
     def _get_list_of_persons_info(self, list_of_persons_url, company_id):
         """
@@ -111,7 +115,7 @@ class TestDataParser(object):
         companies = self._get_list_of_companies_info(list_of_companies_url)
         persons = []
         for company in companies:
-            list_of_persons_url = self._get_list_of_persons_url(company["id"])
+            list_of_persons_url = self._get_list_of_persons_url(company)
             persons += self._get_list_of_persons_info(
                 list_of_persons_url, company["id"])
         return persons
