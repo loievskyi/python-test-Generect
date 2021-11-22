@@ -92,3 +92,16 @@ python manage.py runserver
 Детальна інформація про співробітника доступна за адресою http://localhost:8000/api/v1/persons/\<id\>/
 
 ![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/person-detail.png)
+
+### Парсинг данних з API
+
+Перейти в папку проекту (з консолі чи терміналу), далі
+
+```bash
+python api_data_parser.py
+```
+
+Команду необхідно виконувати при запущеному сервері, що "віддає" API
+В результаті виконається парсинг тестових данних (з методу _get_test_json)
+
+![alt text](https://github.com/loievskyi/python-test-Generect/blob/master/screens/api_data_parser_result.png)

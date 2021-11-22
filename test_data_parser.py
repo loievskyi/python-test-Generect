@@ -1,3 +1,4 @@
+import json
 import requests
 
 
@@ -128,7 +129,7 @@ def main():
     list_of_companies_url = "https://www.linkedin.com/search/results/companies/"
     data_parser = TestDataParser()
     persons_info = data_parser.get_persons_info(list_of_companies_url)
-    print(persons_info)
+    print(json.dumps(persons_info, indent=4, sort_keys=True))
 
 
 if __name__ == "__main__":
